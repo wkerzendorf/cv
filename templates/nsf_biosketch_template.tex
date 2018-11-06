@@ -1,0 +1,93 @@
+\documentclass[10pt]{article}
+%TC:macro \citet [1]
+%TC:macro \citep [1]
+%TC:macro \gls [1]
+\usepackage[margin = 1in]{geometry}
+\geometry{letterpaper}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{natbib}
+\usepackage{xstring}
+
+\input{glossary}
+
+\makeglossaries
+
+\usepackage{xspace}
+\usepackage{aas_macros}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{helvet}
+\usepackage[helvet]{sfmath}
+\usepackage{wrapfig}
+\usepackage{pgfgantt}
+\usepackage{comment}
+\usepackage{siunitx}
+\usepackage{pdfpages}
+\usepackage{ctable}
+\specialcomment{explanation}
+{\begingroup~\newline\color{red}\rule{\textwidth}{0.4pt}\newline}{~\newline\rule{\textwidth}{0.4pt}\newline\endgroup}
+\excludecomment{explanation}
+
+\renewcommand{\refname}{List of refereed Publications}
+\def\FormatName#1{%
+  \IfSubStr{#1}{{Kerzendorf}}{\textbf{#1}}{#1}%
+}
+\usepackage{lastpage}
+\fancyhead[RE,LO]{Wolfgang E. Kerzendorf: NSF Biosketch}
+\fancyhead[LE,RO]{\thepage\ of \pageref{LastPage}}
+\fancyfoot{}
+\pagestyle{fancy}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+
+\usepackage{bashful}
+
+
+\usepackage{caption}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{W. E. Kerzendorf - \institute Fellowship}
+\author{Wolfgang E. Kerzendorf}
+
+\begin{document}
+
+\section*{Professional Preparation}
+\begin{table}[H]
+\centering
+
+\begin{tabular}{llr}
+%Institute, Location & Major & Degree \& Year \\ \hline
+\BLOCK{for item in prof_preparation}
+\VAR{item.institute}, \VAR{item.location} & \VAR{item.major} & \VAR{item.degyear} \\
+\BLOCK{ endfor }
+\end{tabular}
+\end{table}
+    
+\section*{Appointments}
+Assistant Professor, Michigan State University, Physics and Astronomy \& CMSE, 2019 --
+\section*{Products}
+\nocite{2013ApJ...774...99K,2014ApJ...782...27K,2014MNRAS.440..387K,2011MNRAS.410.1725T,2013A&A...558A..33A,2012AJ....143...84H,2013AJ....145...58L,2012ApJ...759....7K,2015MNRAS.446.1889J,2013A&A...554A.109L,2015MNRAS.448L..48T,2009ApJ...701.1665K,2011PhDT.......324K,2014ApJ...796L..26K, 2015ApJ...809..143D, 2016MNRAS.459.4218C, 2017MNRAS.464..194F, 2017arXiv170601460K,2017arXiv170505840K, 2017ApJ...846...15H,2017arXiv170505840K,2017arXiv170510340B,2017arXiv170708572H,2017arXiv170906566K,2017MNRAS.464..194F,2017MNRAS.468.3798D,2017MNRAS.471.4865B,2017MNRAS.472.2534K, 2018arXiv180307562K, 2018arXiv180411163S}
+\bibliographystyle{publication_style} 
+\bibliography{../../wekerzendorf_refereed_citation.bib}
+% 2018 requirements
+%A list of: (i) up to five products most closely related to the proposed project; and (ii) up to five other significant products, whether or not related to the proposed project. Acceptable products must be citable and accessible including but not limited to publications, data sets, software, patents, and copyrights. Unacceptable products are unpublished documents not yet submitted for publication, invited lectures, and additional lists of products. Only the list of ten will be used in the review of the proposal.
+%Each product must include full citation information including (where applicable and practicable) names of all authors, date of publication or release, title, title of enclosing work such as journal or book, volume, issue, pages, website and URL or other Persistent Identifier.
+%If only publications are included, the heading "Publications" may be used for this section of the Biographical Sketch.
+\section*{Synergistic Activities}
+\paragraph{Open Source Software \& Cyber Infrastructure}
+\begin{itemize}
+    \item GSoC & ESA Summer of Code
+    \item StarKit
+    \item astropy
+    \item specutils
+\end{itemize}
+\paragraph{Science Communication}
+\paragraph{Professional Service}
+%GSoC 2014-2017
+%teaching coding
+%2019 requirements
+%A list of up to five examples that demonstrate the broader impact of the individual's professional and scholarly activities that focuses on the integration and transfer of knowledge as well as its creation. Examples could include, among others: innovations in teaching and training (e.g., development of curricular materials and pedagogical methods); contributions to the science of learning; development and/or refinement of research tools; computation methodologies and algorithms for problem-solving; development of databases to support research and education; broadening the participation of groups underrepresented in STEM; and service to the scientific and engineering community outside of the individual’s immediate organization.
+%In FastLane, Biographical sketches for all senior project personnel must be uploaded as a single PDF file associated with that individual.
+\end{document}
