@@ -10,6 +10,7 @@ dependencies:
   - atomicwrites=1.2.1=py_0
   - attrs=18.2.0=py_0
   - backcall=0.1.0=py_0
+  - beautifulsoup4=4.6.3=py37_1000
   - bleach=3.0.2=py_0
   - blosc=1.14.4=hfc679d8_0
   - bzip2=1.0.6=1
@@ -20,6 +21,7 @@ dependencies:
   - entrypoints=0.2.3=py37_1002
   - freetype=2.9.1=h6debe1e_4
   - hdf5=1.10.3=hc401514_2
+  - html5lib=1.0.1=py_0
   - icu=58.2=hfc679d8_0
   - idna=2.7=py37_1002
   - ipykernel=5.1.0=pyh24bf2e0_0
@@ -27,7 +29,6 @@ dependencies:
   - ipython_genutils=0.2.0=py_1
   - ipywidgets=7.4.2=py_0
   - jedi=0.13.1=py37_1000
-  - jinja2=2.10=py_1
   - jpeg=9c=h470a237_1
   - jsonschema=3.0.0a3=py37_1000
   - jupyter=1.0.0=py_1
@@ -36,8 +37,12 @@ dependencies:
   - jupyter_core=4.4.0=py_0
   - kiwisolver=1.0.1=py37h2d50403_2
   - libffi=3.2.1=hfc679d8_5
+  - libiconv=1.15=h470a237_3
   - libpng=1.6.35=ha92aebf_2
   - libsodium=1.0.16=h470a237_1
+  - libxml2=2.9.8=h422b904_5
+  - libxslt=1.1.32=h88dbc4e_2
+  - lxml=4.2.5=py37hc9114bc_0
   - markupsafe=1.0=py37h470a237_1
   - matplotlib=2.2.3=py37h0e0179f_0
   - mistune=0.8.4=py37h470a237_0
@@ -48,6 +53,7 @@ dependencies:
   - ncurses=6.1=hfc679d8_1
   - notebook=5.7.0=py37_1000
   - numexpr=2.6.8=py37hf8a1672_0
+  - orcid=1.0.3=py_0
   - pandas=0.23.4=py37hf8a1672_0
   - pandoc=2.3.1=0
   - pandocfilters=1.4.2=py_1
@@ -85,6 +91,7 @@ dependencies:
   - requests=2.20.0=py37_1000
   - send2trash=1.5.0=py_0
   - setuptools=40.5.0=py37_0
+  - simplejson=3.16.0=py37h470a237_2
   - sip=4.18.1=py37hfc679d8_0
   - six=1.11.0=py37_1001
   - sqlite=3.25.2=hb1c47c0_0
@@ -107,6 +114,7 @@ dependencies:
   - certifi=2018.10.15=py37_0
   - cryptography=2.3.1=py37ha12b0ac_2
   - intel-openmp=2019.0=118
+  - jinja2=2.10=py37_0
   - libcxx=4.0.1=hcfea43d_1
   - libcxxabi=4.0.1=hcfea43d_1
   - libgfortran=3.0.1=h93005f0_2
@@ -114,7 +122,10 @@ dependencies:
   - numpy=1.11.3=py37heee0a97_5
   - openssl=1.1.1=h1de35cc_0
   - python=3.7.1=haf84260_3
+  - tqdm=4.28.1=py37h28b3542_0
   - pip:
+    - bibtexparser==1.0.1
+    - future==0.17.1
     - tables==3.4.4
 prefix: /Users/wkerzend/miniconda/envs/cv
 
