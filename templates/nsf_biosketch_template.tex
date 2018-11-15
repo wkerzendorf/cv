@@ -8,11 +8,12 @@
 \usepackage{float}
 \usepackage{natbib}
 \usepackage{xstring}
+\usepackage{fmtcount}
 
 \input{glossary}
-
+\usepackage{tabularx}
 \makeglossaries
-
+\usepackage{hyperref}
 \usepackage{xspace}
 \usepackage{aas_macros}
 \usepackage[T1]{fontenc}
@@ -26,7 +27,7 @@
 \usepackage{ctable}
 \usepackage{multibib}
 \newcites{related}{Related Publications}
-\newcites{general}{General Publications}
+\newcites{general}{Other Significant Publications}
 
 \specialcomment{explanation}
 {\begingroup~\newline\color{red}\rule{\textwidth}{0.4pt}\newline}{~\newline\rule{\textwidth}{0.4pt}\newline\endgroup}
@@ -61,45 +62,57 @@
 \begin{table}[H]
 \centering
 
-\begin{tabular}{llr}
-%Institute, Location & Major & Degree \& Year \\ \hline
-\BLOCK{for item in prof_preparation}
+\begin{tabularx}{\textwidth}{Xlr}
+
+\BLOCK{for item in prof_preparations}
 \VAR{item.institute}, \VAR{item.location} & \VAR{item.major} & \VAR{item.degyear} \\
 \BLOCK{ endfor }
-\end{tabular}
+\end{tabularx}
 \end{table}
     
 \section*{Appointments}
-Assistant Professor, Michigan State University, Physics and Astronomy \& CMSE, 2019 --
+Assistant Professor, Michigan State University, Physics and Astronomy \& CMSE, August 2019 --
 
 \nociterelated{2018MNRAS.477.3425B, 2017arXiv171100055K, 2017Natur.551...75S, 2014MNRAS.440..387K, 2017A&A...599A..46B}
-\nocitegeneral{2009ApJ...701.1665K, 2014ApJ...796L..26K, 2018AJ....156..123A, 2012ApJ...759....7K, 2017MNRAS.472.2534K}
+\nocitegeneral{2009ApJ...701.1665K, 2014ApJ...796L..26K, 2013A&A...558A..33A, 2012ApJ...759....7K, 2017MNRAS.472.2534K}
 
 \bibliographystylerelated{publication_style} 
-\bibliographyrelated{../../wekerzendorf_all_added.bib}
+\bibliographyrelated{wekerzendorf_2018.bib}
 
 \bibliographystylegeneral{publication_style} 
-\bibliographygeneral{../../wekerzendorf_all_added.bib}
+\bibliographygeneral{wekerzendorf_2018.bib}
 
 % 2018 requirements
 %A list of: (i) up to five products most closely related to the proposed project; and (ii) up to five other significant products, whether or not related to the proposed project. Acceptable products must be citable and accessible including but not limited to publications, data sets, software, patents, and copyrights. Unacceptable products are unpublished documents not yet submitted for publication, invited lectures, and additional lists of products. Only the list of ten will be used in the review of the proposal.
 %Each product must include full citation information including (where applicable and practicable) names of all authors, date of publication or release, title, title of enclosing work such as journal or book, volume, issue, pages, website and URL or other Persistent Identifier.
 %If only publications are included, the heading "Publications" may be used for this section of the Biographical Sketch.
 \section*{Synergistic Activities}
-\paragraph{Open Source Software \& Cyber Infrastructure} I have been a lead and contributor in many scientific software communities. 
-\begin{itemize}
-    \item GSoC \& ESA Summer of Code
-    \item StarKit
-    \item astropy
-    \item specutils
-    \item deepthought \& DPR
-\end{itemize}
+\paragraph{Open Source Software \& Cyber Infrastructure} I have been a lead and contributor in many scientific software communities (having contributed to 46 repositories\footnote{\url{https://coderstats.net/github/\#wkerzendorf}}). I was one of the founding members of Astropy which is number 
+\textbf{\numberstringnum{\VAR{astropy_stats.citation_rank_last5}}} in the most cited papers (I am in the top 10 of authors) in the last five years (with \VAR{astropy_stats.contributors} contributors, \VAR{astropy_stats.code_lines} lines of code).
+ In the Astropy community, I also lead the development of \textsc{specutils} package between its inception in 2012 to 2016. 
+I am the PI of the \textsc{tardis} interdisciplinary collaboration (software engineers, computer scientists, statisticians and astronomers) which develops the open-collaboration supernova spectral synthesis code \textsc{tardis} at \url{https://www.github.com/tardis-sn/tardis}. Open Hub \footnote{a service providing statistics on many open-source projects} shows the \textsc{tardis} collaboration be in the top 10\% largest teams (\VAR{tardis_stats.contributors} contributors) in open source world with a large and mature code base (\num{\VAR{tardis_stats.code_lines}} lines of code). 
+
+%I am the founder and PI of the open collaboration code that is now called \textsc{StarKit}\footnote{\url{https://www.github.com/starkit/starkit}}. %It is used to infer stellar parameters from photometry and spectra. It has been applied widely usef in supernova companion searches as well as %science in the Galactic Center (most recently to measure the velocity of the closes approach star in S02). 
+
+\paragraph{Mentoring}
+There are several initiatives that enable University students to improve skills in community software development. I have led the participation (org admin) for \textsc{tardis} in both the Google Summer of Code (GSoC) program as well as ESA's Summer of Code in Space (SoCiS) -- running for three months in the summer. Between 2013 -- 2017, \textsc{tardis} had mentored ten students from Universities in Europe, North America, and Asia. The total funding from this program (student stipdens and award for \textsc{tardis}) is more than \num{90000} USD. 
+I also ran the participation of \textsc{specutils} for SoCis and mentored two students for \textsc{astropy} in 2013. 
+I have had several undergraduate students work with me on the \textsc{tardis} and other open source projects. All of the contributors are now acknowledged through our citation process at 
+\url{https://zenodo.org/record/1292315}
+
+
+I have been an Instructor and Mentor for the West African International Summer School for Young Astronomers since 2015. I performed inquiry based teaching and mentoring for undergraduate students in Nigeria. I am a co-founding member of the spin-off ESO Astronomy Research Training that had it's first school in Ghana in 2018
+\footnote{report available at \url{http://doi.eso.org/10.18727/0722-6691/5102}}.
+
 \paragraph{Science Communication}
-esoart
-waissya
+I have been an avid science communicator since the beginning of my career. I was awarded the ANU Vice Chancellor’s Special Award twice (2007\&2011) as part of the Mt. Stromlo Outreach group.  
+I would like to especially mention the shortfilm ``Starcatchers''\footnote{accesible at \url{https://www. youtube.com/watch?v=wFmDNBWAAE0}}. This film made by myself and team as an entry to the ``science video competition'' at the Australian National University (the host for my PhD) and was awarded first place. I was leading a team of three PhD students to produce this film. All work - except the supernova explosion itself - was done by us (producing, recording, cutting, computer generated images and composition).
 
 \paragraph{Professional Service}
-refereeing
+
+I have been a referee for several astronomy journals (ApJ, AA, MNRAS). I have also reviewed Gemini proposals in their distributed peer review process. I have built and am running the knowledge discovery service for papers at \url{http://deepthought.space/deepthought} (paper available at \url{https://arxiv.org/abs/1705.05840}).
+Recently, I have used this technology to test a distributed peer review system (at ESO) that will use publications of referees to judge their expertise for a particular proposal. 
+
 %\paragraph{}
 %GSoC 2014-2017
 %teaching coding
